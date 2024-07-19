@@ -15,3 +15,24 @@ npm i react-icons clsx
   {children}
 </body>
 ```
+
+## config tailwind theme extend
+
+```js
+ theme: {
+    extend: {
+      colors: {
+        primary: "#eb5e28",
+        secondary: "#252422",
+        tertiary: "#403d39",
+        light: "#fffcf2",
+      },
+    },
+  },
+```
+
+then can change the layout class to:
+
+```js
+className={`${inter.className} overflow-x-hidden bg-light`}
+```
