@@ -1,5 +1,11 @@
+import Hero from "@/components/shared/Hero";
+
 const Home = () => {
-  return <div className="h-[2000px]">Home</div>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 };
 
 export default Home;
