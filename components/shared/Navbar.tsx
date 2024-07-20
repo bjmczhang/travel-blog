@@ -5,8 +5,10 @@ import Button from "../ui/Button";
 import Route from "../ui/Route";
 import { navLinks } from "@/constants";
 import { useEffect, useState } from "react";
+import useMenuActive from "@/hooks/useMenuActive";
 import clsx from "clsx";
 import MobileMenu from "./MobileMenu";
+
 const Navbar = () => {
   return (
     <nav className="py-4 w-full">
@@ -19,11 +21,15 @@ const Navbar = () => {
           </Link>
         </div>
         <ul className="flex items-center justify-center gap-16 flex-2 max-md:hidden">
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              <Route route={link.route} label={link.label} />
-            </li>
-          ))}
+          {navLinks.map((link, index) => {
+            const isActive = useMenuActive(link.route);
+
+            return (
+              <li key={index}>
+                <Route route={link.route} label={link.label} />
+              </li>
+            );
+          })}
         </ul>
         <div className="flex gap-5 flex-1 justify-end max-md:hidden">
           <Button text="Log In" onClick={() => null} aria="Log in button" />

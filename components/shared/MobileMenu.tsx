@@ -29,7 +29,43 @@ const MobileMenu = () => {
           <div
             onClick={(e) => e.stopPropagation()}
             className="abbsolute h-screen left-0 top-0 w-60 bg-white z-[999] px-5 border-r overflow-y-hidden flex flex-col gap-10"
-          ></div>
+          >
+            <div className="border-b py-5">
+              <Link href={"/"}>
+                <h1 className="text-3xl font-extrabold text-secondary">
+                  Explore <span className="text-primary">X</span>
+                </h1>
+              </Link>
+
+              <div className="flex gap-5 text-secondary flex-1 justify-center text-xl mt-5">
+                <FaSquareFacebook />
+                <FaSquareInstagram />
+                <FaSquareGithub />
+                <FaSquareXTwitter />
+              </div>
+            </div>
+
+            <ul className="flex items-center justify-center gap-10 flex-col mt-5 flex-1 py-5 border-b">
+              {navLinks.map((link, index) => (
+                <li key={index}>
+                  <Route
+                    route={link.route}
+                    label={link.label}
+                    onClick={() => setOpenMobileMenu(false)}
+                  />
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex gap-5 flex-1 flex-col py-5">
+              <Button text="Log In" onClick={() => null} aria="Log in button" />
+              <Button
+                text="Sign Up"
+                onClick={() => null}
+                aria="Sign up button"
+              />
+            </div>
+          </div>
         </div>
       ) : null}
     </>
