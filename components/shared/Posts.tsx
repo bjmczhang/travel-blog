@@ -4,10 +4,7 @@ import { useState } from "react";
 import { blogData } from "@/constants/blogData";
 import BlogCard from "./BlogCard";
 import Button from "../ui/Button";
-import Link from "next/link";
-const LatestPost = () => {
-  const latestpost = blogData.filter((blog) => blog.topPost === true);
-
+const Posts = () => {
   const [visibleBlogs, setVisibleBlogs] = useState(5);
 
   const showMoreBlogs = () => {
@@ -26,10 +23,10 @@ const LatestPost = () => {
       </div>
 
       <div className="flex flex-col gap-10 h-full">
-        {latestpost.slice(0, visibleBlogs).map((post, id) => (
+        {blogData.slice(0, visibleBlogs).map((post, id) => (
           <BlogCard post={post} key={id} />
         ))}
-        {visibleBlogs < latestpost.length && (
+        {visibleBlogs < blogData.length && (
           <div className="flex justify-center">
             <Button
               onClick={showMoreBlogs}
@@ -43,4 +40,4 @@ const LatestPost = () => {
   );
 };
 
-export default LatestPost;
+export default Posts;

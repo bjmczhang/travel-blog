@@ -33,8 +33,9 @@ const Navbar = () => {
     >
       <div
         className={clsx(
-          "w-[95%] mx-auto max-w-[1450px] flex items-center justify-between pb-5 border-b border-gray-100",
-          isScrolling ? "pb-0 border-none" : null
+          "w-[95%] mx-auto max-w-[1450px] flex items-center justify-between  border-b border-gray-100",
+          isScrolling ? "pb-0 border-none" : null,
+          !isScrolling ? "pb-5" : null
         )}
       >
         <div className="flex-1">

@@ -5,18 +5,19 @@ import Overlay from "../ui/Overlay";
 import Link from "next/link";
 
 interface blogCardProps {
-  id: string;
+  id: number;
   title: string;
   image_path: string;
-  paragraph: string;
-  featured: boolean;
-  topPost: boolean;
+  paragraph?: string;
+  featured?: boolean;
+  topPost?: boolean;
+  latestPost?: boolean;
   tags: string[];
-  authorImage: string;
-  authorName: string;
-  publishDate: string;
+  authorImage?: string;
+  authorName?: string;
+  publishDate?: string;
 }
-const BlogCard = ({ post, index }: { post: blogCardProps; index: number }) => {
+const BlogCard = ({ post }: { post: blogCardProps }) => {
   return (
     <article className="relative rounded-lg overflow-hidden">
       <div className="2-[1000px] h-[450px] relative">
@@ -37,6 +38,15 @@ const BlogCard = ({ post, index }: { post: blogCardProps; index: number }) => {
           </h3>
         </div>
       </div>
+      <Link
+        href={{
+          pathname: `/blog/${post.id}`,
+          query: { ...post },
+        }}
+        className="absolute bottom-0 right-0 bg-tertiary p-5 text-white rounded-tl-lg z-6 cursor-pointer"
+      >
+        <AiOutlineArrowRight size={30} />
+      </Link>
     </article>
   );
 };
