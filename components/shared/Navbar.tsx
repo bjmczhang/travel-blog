@@ -26,7 +26,11 @@ const Navbar = () => {
 
             return (
               <li key={index}>
-                <Route route={link.route} label={link.label} />
+                <Route
+                  route={link.route}
+                  label={link.label}
+                  isActive={isActive}
+                />
               </li>
             );
           })}
