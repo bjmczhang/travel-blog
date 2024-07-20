@@ -62,3 +62,10 @@ stopPropagation 可以阻止这两种形式的传播，使事件只在当前元�
   <div onClick={(e) => e.stopPropagation()}></div>
 </div>
 ```
+
+# Backend
+
+## NextAuth.js
+
+- install next-auth
+- install Adaptors - Prisma
