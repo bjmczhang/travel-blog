@@ -19,7 +19,7 @@ const MobileMenu = () => {
   };
   return (
     <>
-      <div className="md:hidden" onClick={mobileMenuHandler}>
+      <div className="md:hidden cursor-pointer" onClick={mobileMenuHandler}>
         {openMobileMenu ? <CgClose size={25} /> : <CgMenuGridO size={25} />}
       </div>
       {openMobileMenu ? (

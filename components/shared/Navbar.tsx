@@ -10,8 +10,22 @@ import clsx from "clsx";
 import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScoll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    };
+    window.addEventListener("scroll", handleScoll);
+    return () => window.removeEventListener("scroll", handleScoll);
+  }, []);
+
   return (
-    <nav className="py-4 w-full">
+    <nav className={clsx("py-4 w-full", { fixed: isScrolling })}>
       <div className="w-[95%] mx-auto max-w-[1450px] flex items-center justify-between pb-5 border-b border-gray-100">
         <div className="flex-1">
           <Link href={"/"}>
