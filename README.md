@@ -36,3 +36,9 @@ then can change the layout class to:
 ```js
 className={`${inter.className} overflow-x-hidden bg-light`}
 ```
+
+## create some folders
+
+/app/(auth)
+/app/(site)
+/constants/: mock database(before create backend)
