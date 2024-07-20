@@ -42,3 +42,9 @@ className={`${inter.className} overflow-x-hidden bg-light`}
 /app/(auth)
 /app/(site)
 /constants/: mock database(before create backend)
+
+## create Navbar components
+
+/shared/Navbar.tsx
+/ui/Route.tsx: Navbar links
+...
